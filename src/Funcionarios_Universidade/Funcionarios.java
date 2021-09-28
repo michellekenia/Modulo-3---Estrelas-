@@ -4,15 +4,15 @@ public class Funcionarios {
     private String nome;
     private String cpf;
     private int numeroDeRegistro;
-    private String localDeTrabalho;
-    private double orgaoDeLotacao;
+    private String orgaoDeLotacao;
+    private double salario;
 
-    public Funcionarios(String nome, String cpf, int numeroDeRegistro, String localDeTrabalho, double orgaoDeLotacao) {
+    public Funcionarios(String nome, String cpf, int numeroDeRegistro, String orgaoDeLotacao, double salario) {
         this.nome = nome;
         this.cpf = cpf;
         this.numeroDeRegistro = numeroDeRegistro;
-        this.localDeTrabalho = localDeTrabalho;
         this.orgaoDeLotacao = orgaoDeLotacao;
+        this.salario = salario;
     }
 
     public String getNome() {
@@ -39,19 +39,25 @@ public class Funcionarios {
         this.numeroDeRegistro = numeroDeRegistro;
     }
 
-    public String getLocalDeTrabalho() {
-        return localDeTrabalho;
-    }
-
-    public void setLocalDeTrabalho(String localDeTrabalho) {
-        this.localDeTrabalho = localDeTrabalho;
-    }
-
-    public double getOrgaoDeLotacao() {
+    public String getOrgaoDeLotacao() {
         return orgaoDeLotacao;
     }
 
-    public void setOrgaoDeLotacao(double orgaoDeLotacao) {
+    public void setOrgaoDeLotacao(String orgaoDeLotacao) {
         this.orgaoDeLotacao = orgaoDeLotacao;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+
+    public double AumentaSalario() {
+        double salarioComAumento = (0.1 * salario) + salario;
+        this.salario = salarioComAumento;
+        return salarioComAumento;
     }
 }

@@ -7,8 +7,8 @@ public class Professor extends Funcionarios {
     private int quantidadeDeAlunos;
     private int quantidadeDeTurmas;
 
-    public Professor(String nome, String cpf, int numeroDeRegistro, String localDeTrabalho, double orgaoDeLotacao, String nivelDeGraduacao, String disciplinaMinistrada, int quantidadeDeAlunos, int quantidadeDeTurmas) {
-        super(nome, cpf, numeroDeRegistro, localDeTrabalho, orgaoDeLotacao);
+    public Professor(String nome, String cpf, int numeroDeRegistro, String orgaoDeLotacao, double salario, String nivelDeGraduacao, String disciplinaMinistrada, int quantidadeDeAlunos, int quantidadeDeTurmas) {
+        super(nome, cpf, numeroDeRegistro, orgaoDeLotacao, salario);
         this.nivelDeGraduacao = nivelDeGraduacao;
         this.disciplinaMinistrada = disciplinaMinistrada;
         this.quantidadeDeAlunos = quantidadeDeAlunos;
@@ -45,6 +45,11 @@ public class Professor extends Funcionarios {
 
     public void setQuantidadeDeTurmas(int quantidadeDeTurmas) {
         this.quantidadeDeTurmas = quantidadeDeTurmas;
+
     }
 
+    public int AdicionaTurma(int turmaAdcionada) {
+        this.quantidadeDeTurmas = turmaAdcionada + quantidadeDeTurmas;
+        return quantidadeDeTurmas;
+    }
 }
