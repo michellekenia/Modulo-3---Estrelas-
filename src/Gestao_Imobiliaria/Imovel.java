@@ -5,24 +5,23 @@ import java.util.List;
 
 public class Imovel {
 
-    private String nomeFuncionario;
+    private Funcionario funcionario;
     private String enderecoImovel;
-    private String valorAluguel;
-    private List <Moradores> listaDemoradores = new ArrayList<>();
+    private double valorAluguel;
+    private List<Morador> listaDemoradores = new ArrayList<>();
 
-    public Imovel(String nomeFuncionario, String enderecoImovel, String valorAluguel, List<Moradores> listaDemoradores) {
-        this.nomeFuncionario = nomeFuncionario;
+    public Imovel(Funcionario funcionario, String enderecoImovel, double valorAluguel) {
+        this.funcionario = funcionario;
         this.enderecoImovel = enderecoImovel;
         this.valorAluguel = valorAluguel;
-        this.listaDemoradores = listaDemoradores;
     }
 
-    public String getNomeFuncionario() {
-        return nomeFuncionario;
+    public Funcionario getFuncionario() {
+        return funcionario;
     }
 
-    public void setNomeFuncionario(String nomeFuncionario) {
-        this.nomeFuncionario = nomeFuncionario;
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
     }
 
     public String getEnderecoImovel() {
@@ -33,19 +32,31 @@ public class Imovel {
         this.enderecoImovel = enderecoImovel;
     }
 
-    public String getValorAluguel() {
+    public double getValorAluguel() {
         return valorAluguel;
     }
 
-    public void setValorAluguel(String valorAluguel) {
+    public void setValorAluguel(double valorAluguel) {
         this.valorAluguel = valorAluguel;
     }
 
-    public List<Moradores> getListaDemoradores() {
+    public List<Morador> getListaDemoradores() {
         return listaDemoradores;
     }
 
-    public void setListaDemoradores(List<Moradores> listaDemoradores) {
-        this.listaDemoradores = listaDemoradores;
+    public void adicionarMorador(Morador novoMorador) {
+        listaDemoradores.add(novoMorador);
+
+    }
+
+    @Override
+    public String toString() {
+      StringBuilder retorno = new StringBuilder();
+      retorno.append("Endereço: " + enderecoImovel);
+      retorno.append("Valor aluguel: " + valorAluguel);
+      retorno.append("Funcionário responsável: " + funcionario);
+      retorno.append("Quantidade moradores: " + listaDemoradores.size());
+      retorno.append("Lista de moradores: " + listaDemoradores);
+        return retorno.toString();
     }
 }
