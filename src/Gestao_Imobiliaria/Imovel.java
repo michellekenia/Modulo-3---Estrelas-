@@ -10,6 +10,11 @@ public class Imovel {
     private double valorAluguel;
     private List<Morador> listaDemoradores = new ArrayList<>();
 
+    public Imovel(String enderecoImovel, double valorAluguel) {
+        this.enderecoImovel = enderecoImovel;
+        this.valorAluguel = valorAluguel;
+    }
+
     public Imovel(Funcionario funcionario, String enderecoImovel, double valorAluguel) {
         this.funcionario = funcionario;
         this.enderecoImovel = enderecoImovel;
