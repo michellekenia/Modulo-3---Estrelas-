@@ -17,16 +17,16 @@ public class Sistema {
     }
 
     public static Ingrediente cadastrarIngrediente() {
-        String nome = capturarDados("Digite o ingrediente.").nextLine();
-
+        String nome = capturarDados("Digite os ingredientes.\n").nextLine();
+        System.out.println();
         Ingrediente ingrediente = new Ingrediente(nome);
         return ingrediente;
     }
 
     public static Prato cadastrarPrato() {
-        String nome = capturarDados("Digite o nome do prato.").nextLine();
-        String tipo = capturarDados("Digite o tipo do prato (vegano/vegetariano).").nextLine();
-        double valor = capturarDados("Digite o valor do prato.").nextDouble();
+        String nome = capturarDados("Digite o nome do prato.\n").nextLine();
+        String tipo = capturarDados("Digite o tipo do prato (vegano/vegetariano).\n").nextLine();
+        double valor = capturarDados("Digite o valor do prato.\n").nextDouble();
 
         Prato prato = new Prato(nome, tipo, valor);
         return prato;
@@ -42,10 +42,12 @@ public class Sistema {
 
             menu();
 
-            int opcaoDoUsuario = capturarDados("Digite a opção desejada: ").nextInt();
+            int opcaoDoUsuario = capturarDados("Digite a opção desejada:").nextInt();
 
             if (opcaoDoUsuario == 1) {
+
                 Ingrediente ingrediente = cadastrarIngrediente();
+                System.out.println();
                 Prato prato = cadastrarPrato();
 
                 prato.adicionarIngredientes(ingrediente);
@@ -57,6 +59,7 @@ public class Sistema {
             } else if (opcaoDoUsuario == 3) {
                 System.out.println("Obrigado por usar o sistema.");
                 menu = false;
+
             } else {
                 System.out.println("Digite um valor válido para usar o menu.");
             }
