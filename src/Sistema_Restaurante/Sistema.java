@@ -16,14 +16,55 @@ public class Sistema {
         System.out.println("Digite 3 - Para sair do sistema.");
     }
 
-    public static Ingrediente cadastrarIngrediente () {
+    public static Ingrediente cadastrarIngrediente() {
         String nome = capturarDados("Digite o ingrediente.").nextLine();
 
         Ingrediente ingrediente = new Ingrediente(nome);
         return ingrediente;
     }
 
+    public static Prato cadastrarPrato() {
+        String nome = capturarDados("Digite o nome do prato.").nextLine();
+        String tipo = capturarDados("Digite o tipo do prato (vegano/vegetariano).").nextLine();
+        double valor = capturarDados("Digite o valor do prato.").nextDouble();
 
+        Prato prato = new Prato(nome, tipo, valor);
+        return prato;
+
+    }
+
+    public static void executar() {
+        Restaurante restaurante = new Restaurante();
+
+        boolean menu = true;
+
+        while (menu) {
+
+            menu();
+
+            int opcaoDoUsuario = capturarDados("Digite a opção desejada: ").nextInt();
+
+            if (opcaoDoUsuario == 1) {
+                Ingrediente ingrediente = cadastrarIngrediente();
+                Prato prato = cadastrarPrato();
+
+                prato.adicionarIngredientes(ingrediente);
+                restaurante.adicionarPratos(prato);
+
+            } else if (opcaoDoUsuario == 2) {
+                System.out.println(restaurante);
+
+            } else if (opcaoDoUsuario == 3) {
+                System.out.println("Obrigado por usar o sistema.");
+                menu = false;
+            } else {
+                System.out.println("Digite um valor válido para usar o menu.");
+            }
+
+        }
+
+
+    }
 
 
 }

@@ -5,6 +5,12 @@ import java.util.List;
 
 public class Prato {
 
+    public Prato(String nome, String tipo, double valor) {
+        this.nome = nome;
+        this.tipo = tipo;
+        this.valor = valor;
+    }
+
     private String nome;
     private String tipo;
     private double valor;
