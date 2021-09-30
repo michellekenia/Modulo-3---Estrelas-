@@ -64,10 +64,10 @@ public class Prato {
     @Override
     public String toString() {
         StringBuilder retorno = new StringBuilder();
-        retorno.append("Nome do prato" + nome);
-        retorno.append("Tipo do prato (Vegetariano/Vegano)" + tipo);
-        retorno.append("Preço do prato" + valor);
-        retorno.append("Lista de ingredientes" + listaingredientes);
+        retorno.append("\nNome do prato: " + nome);
+        retorno.append("\nTipo do prato (Vegetariano/Vegano): " + tipo);
+        retorno.append("\nPreço do prato: " + valor);
+        retorno.append("\nLista de ingredientes: " + listaingredientes);
         return retorno.toString();
     }
 }

@@ -19,7 +19,7 @@ public class Ingrediente {
     @Override
     public String toString() {
         StringBuilder retorno = new StringBuilder ();
-        retorno.append("Nome do ingrediente: " + nome);
+        retorno.append("\nNome dos ingredientes: " + nome);
         return retorno.toString();
     }
 }
