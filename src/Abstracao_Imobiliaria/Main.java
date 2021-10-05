@@ -1,2 +1,4 @@
-package Abstracao_Imobiliaria;public class Main {
+package Abstracao_Imobiliaria;
+
+public class Main {
 }
